@@ -17,7 +17,8 @@ stream.markdown('''Руководство компании обратило вн
 data_upload = stream.file_uploader(label='Загрузить данные')
 
 if data_upload is not None:
-    data = pd.read_csv(data_upload, encoding='cp1252')
+    data_upload = data_upload.encode('mbcs').decode('utf-8')
+    data = pd.read_csv(data_upload)
     data
 
     work_days = stream.slider('work_days', min_value=1, max_value=7, value=2)
