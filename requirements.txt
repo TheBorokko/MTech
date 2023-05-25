@@ -1,8 +1,6 @@
-matplotlib @ file:///C:/ci/matplotlib-suite_1613408055530/work
-numpy @ file:///C:/ci/numpy_and_numpy_base_1603466732592/work
-pandas @ file:///C:/ci/pandas_1614711443373/work
-scikit-image==0.17.2
-scikit-learn @ file:///C:/ci/scikit-learn_1614446896245/work
-scipy @ file:///C:/ci/scipy_1614023125644/work
-seaborn @ file:///tmp/build/80754af9/seaborn_1608578541026/work
+matplotlib
+numpy
+pandas
+scikit-learn
+scipy
 streamlit==1.22.0
