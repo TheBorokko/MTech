@@ -17,7 +17,7 @@ stream.markdown('''Руководство компании обратило вн
 data_upload = stream.file_uploader(label='Загрузить данные')
 
 if data_upload is not None:
-    data_upload = data_upload.encode('mbcs').decode('utf-8')
+    data_upload.encode('mbcs').decode('utf-8')
     data = pd.read_csv(data_upload)
     data
 
