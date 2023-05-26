@@ -33,7 +33,7 @@ workers_older = []
 workers_younger = []
 
 
-for i in range(1000):
+for i in range(10000):
     m.append(data[data['Пол'] =='М'].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
     w.append(data[data['Пол'] =='М'].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
     workers_older.append(data[data['Возраст'] >= age].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
