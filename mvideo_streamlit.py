@@ -34,10 +34,14 @@ workers_younger = []
 
 
 for i in range(5000):
-    m.append(data[data['Пол'] =='М'].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
-    w.append(data[data['Пол'] =='М'].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
-    workers_older.append(data[data['Возраст'] >= age].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
-    workers_younger.append(data[data['Возраст'] < age].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
+    m.append(np.random.Generator.choice(data[data['Пол'] =='М']['is_greater_than'].values, size=100, shuffle=True).mean())
+    w.append(np.random.Generator.choice(data[data['Пол'] =='Ж']['is_greater_than'].values, size=100, shuffle=True).mean())
+    workers_older.append(np.random.Generator.choice(data[data['Возраст'] >= age]['is_greater_than'].values, size=100, shuffle=True).mean())
+    workers_younger.append(np.random.Generator.choice(data[data['Возраст'] < age]['is_greater_than'].values, size=100, shuffle=True).mean())
+    #m.append(data[data['Пол'] =='М'].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
+    #w.append(data[data['Пол'] =='Ж'].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
+    #workers_older.append(data[data['Возраст'] >= age].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
+    #workers_younger.append(data[data['Возраст'] < age].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
 
 m = pd.Series(m)
 w = pd.Series(w)
