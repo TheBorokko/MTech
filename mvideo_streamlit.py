@@ -4,6 +4,7 @@ import seaborn as sns
 from numpy.random import RandomState
 import streamlit as stream
 import matplotlib.pyplot as plt
+import numpy as np
 
 state = RandomState(42)
 
