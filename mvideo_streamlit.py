@@ -33,7 +33,7 @@ workers_older = []
 workers_younger = []
 
 
-for i in range(10000):
+for i in range(5000):
     m.append(data[data['Пол'] =='М'].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
     w.append(data[data['Пол'] =='М'].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
     workers_older.append(data[data['Возраст'] >= age].sample(frac=1, replace=True, random_state=state)['is_greater_than'].mean())
@@ -49,7 +49,7 @@ stream.title("Графики распределений")
     
 stream.markdown('График распределения мужчин и женщин:')
 fig = plt.figure(figsize=(10, 4))
-ax = plt.axes(xlim=(0, 1), ylim=(0, 200))
+ax = plt.axes(xlim=(0, 1), ylim=(0, 2500))
 plt.title('Распределение вероятностей мужчин и женщин, которые пропустили дней: ' + str(work_days))
 plt.xlabel("Вероятность пропуска")
 plt.ylabel("Количество")
@@ -60,7 +60,7 @@ stream.pyplot(fig)
     
 stream.markdown('График распределения людей, старше и младше ' + str(age) + ' лет:')
 fig = plt.figure(figsize=(10, 4))
-ax = plt.axes(xlim=(0, 1), ylim=(0, 200))
+ax = plt.axes(xlim=(0, 1), ylim=(0, 2500))
 plt.title('Распределение вероятностей людей, старше и младше ' + str(age) + ' лет, которые пропустили дней: ' + str(work_days))
 plt.xlabel("Вероятность пропуска")
 plt.ylabel("Количество")
